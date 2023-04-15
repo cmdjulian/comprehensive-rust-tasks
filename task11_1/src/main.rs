@@ -25,21 +25,13 @@ impl std::fmt::Display for Book {
 }
 
 impl Library {
-    fn new() -> Library {
-        Library { books: Vec::new() }
-    }
+    fn new() -> Library { Library { books: Vec::new() } }
 
-    fn len(&self) -> usize {
-        self.books.len()
-    }
+    fn len(&self) -> usize { self.books.len() }
 
-    fn is_empty(&self) -> bool {
-        self.books.is_empty()
-    }
+    fn is_empty(&self) -> bool { self.books.is_empty() }
 
-    fn add_book(&mut self, book: Book) {
-        self.books.push(book)
-    }
+    fn add_book(&mut self, book: Book) { self.books.push(book) }
 
     fn print_books(&self) {
         for b in &self.books {
@@ -47,9 +39,7 @@ impl Library {
         }
     }
 
-    fn oldest_book(&self) -> Option<&Book> {
-        self.books.iter().min_by_key(|&book| book.year)
-    }
+    fn oldest_book(&self) -> Option<&Book> { self.books.iter().min_by_key(|&book| book.year) }
 }
 
 // This shows the desired behavior. Uncomment the code below and
